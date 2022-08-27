@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="400px" height="400px" ></canvas>
+    <script>
+        class Rectangle{
+            width;
+            height;
+            constructor(width,height){
+                this.width = width;
+                this.height = height;
+            }
+            display(width,height){
+                let canvas = document.getElementById("canvas");
+                if(canvas.getContext){
+                    let ctx = canvas.getContext('2d');
+                    ctx.strokeRect(40, 40, this.width, this.height );
+                }
+            }
+            setWidth(width){
+                return this.width;
+            }
+            setHeight(height){
+                return this.height;
+            }
+            perimeter(width, height){
+                let p = (this.width + this.height)*2;
+                return p;
+            }
+            area(width,height){
+                let s = this.width*this.height;
+                return s;
+            }
+        }
+        let rectangle = new Rectangle(100,300);
+        rectangle.display();
+        document.write("<br/>chi vi:"+ rectangle.perimeter()+"<br/>");
+        document.write("dien tich:"+rectangle.area()); 
+    </script>
+</body>
+</html>
